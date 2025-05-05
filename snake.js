@@ -163,7 +163,7 @@ const gameOver = () => {
     canvas.style.filter = "blur(5px)";
     menu.style.display = "flex";
     finalScore.innerHTML = score.innerHTML;
-    speed = 100000000
+    speed = 1000000000
 };
 
 
@@ -205,7 +205,7 @@ gameLoop()
 
 
 
-document.addEventListener("keydown", ({key}) => {
+document.addEventListener("keydown", ({key}) => {   
     if(key == "ArrowRight" && direction != "left"){
         direction = "right"
     }
@@ -220,6 +220,38 @@ document.addEventListener("keydown", ({key}) => {
 
     if(key == "ArrowDown" && direction != "up"){
         direction = "down"
+    }
+
+    if(key == "Enter"){
+        score.innerHTML = "00";
+        menu.style.display = "none";
+        canvas.style.filter = "none";
+    
+        snake = [
+            {x: 280, y: 240},
+            {x: 300, y: 240}
+        ];
+    
+        speed = 200; 
+        direction = undefined; 
+        gameLoop(); 
+        
+    }
+
+    if(key == " " || key == "Space"){
+        score.innerHTML = "00";
+        menu.style.display = "none";
+        canvas.style.filter = "none";
+    
+        snake = [
+            {x: 280, y: 240},
+            {x: 300, y: 240}
+        ];
+    
+        speed = 200; 
+        direction = undefined; 
+        gameLoop(); 
+        
     }
 
 })

@@ -20,6 +20,7 @@ h1{
     flex-direction: column;
     align-items: center;
     font-size: 1.8rem;
+    margin-top: 30px;
 }
 
 canvas{
